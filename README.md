@@ -8,6 +8,7 @@
 Projeto front-end, recriando o client da riot em uma pagina web usando css3 html5 e javascript.<br>
 O projeto esta totalmente responsivo para as principais marcas de celulares do mercado e monitores.<br>
 Contem também um sistema de login fake, usando cookies para ter uma experiencia bem proxima ao que é o launcher de verdade<br>
+Cada jogo contem uma apresentação caso passe o mouse / pressione o dedo neles.
 
 OBS : Não tenho nenhum envolvimento com a RiotGames, e este projeto é destinado para demonstração de performace com front-end em webapps.
 
