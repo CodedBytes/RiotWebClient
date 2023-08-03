@@ -1,0 +1,100 @@
+/* Default para todas as janelas */
+.window {
+    position: relative;
+    display: inline-block;
+}
+
+/*------------------------------ WINDOWS ---------------------------------------*/
+.windowInfo {
+    display: none;
+    position: absolute;
+    padding: 20px 15px;
+    background-color: #181818;
+    width: 200px;
+    max-height: 220px;
+    text-align: center;
+    z-index: 5;
+    /*box-shadow: 3px 4px 2px rgb(37, 37, 37);*/
+    border-color: #000000;
+    border-radius: 3px;
+    top: 10px;
+    right: 70px;
+}
+
+.windowInfo > a {
+    margin: 2px 0px;
+    padding: 7px 0px;
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 5px;
+    color: rgb(204, 204, 204);
+}
+.windowInfo > a.blocked {
+    color: rgb(110, 110, 110);
+}
+.windowInfo > a.blocked:hover {
+    color: rgb(110, 110, 110);
+    background-color: #00000000;
+    cursor: help;
+}
+.windowInfo > a:hover {
+    background-color: #000000;
+}
+
+/* ---------------- INDEX */
+.indexWindowInfo {
+    display: none;
+    position: absolute;
+    padding: 20px 15px;
+    background-color: #181818ef;
+    width: 220px;
+    max-height: 220px;
+    z-index: 5;
+    /*box-shadow: 3px 4px 2px rgb(37, 37, 37);*/
+    border-color: #000000;
+    border-radius: 3px;
+    top: 0px;
+    right: 70px;
+}
+
+.indexWindowInfo > a {
+    margin: 2px 0px;
+    padding: 7px 15px;
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 5px;
+    color: rgb(204, 204, 204);
+}
+.indexWindowInfo > a.blocked {
+    color: rgb(110, 110, 110);
+}
+.indexWindowInfo > a.blocked:hover {
+    color: rgb(110, 110, 110);
+    background-color: #00000000;
+    cursor: help;
+}
+.indexWindowInfo > a:hover {
+    background-color: #000000;
+}
+
+/**/
+
+/*-------------------------------------------------------------------------------*/
+
+.show {
+    display: flex;
+    flex-direction: column;
+    animation-name: showPopUp;
+    animation-duration: 0.1s;
+}
+
+
+
+@keyframes showPopUp {
+    0%   {background-color: #a8a8a800;}
+    25%  {background-color: #0000003f;}
+    50%  {background-color: #0000007a;}
+    100% {background-color: #181818ef;}
+}

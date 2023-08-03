@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riot Client Login</title>
+    <link rel="shortcut icon" href="./imgs/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/Windows.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+</head>
+<body>
+    <!-- Valida se tem algum cookie desse site -->
+    <script type="text/javascript">
+        if(getCookie("usuario") && getCookie("senha")){
+            location.href = "./";
+        }
+   </script>
+
+    <!-- Main Page -->
+    <section class="main">
+        <div class="formulario">
+            <img src="./imgs/form_logo.png" alt="">
+            <h2>Fazer login </h2>
+            
+            <form action="javascript:doFakeLogin();" method="POST" name="loginsys">
+                <input type="text" name="login" id="login" class="login" required />
+                <label class="pHolderLogin" for="login">NOME DE USUARIO</label>
+                <input type="password" name="senha" id="senha" class="pass" required />
+                <label class="pHolderPass" for="senha">SENHA</label>
+
+                <div class="botoes">
+                    <button type="button" class="facebook"><img src="./imgs/icons/facebook.png" alt=""></button>
+                    <button type="button"><img src="./imgs/icons/google.png" alt=""></button>
+                    <button type="button" class="dark"><img src="./imgs/icons/apple.png" alt=""></button>
+                    <button type="button" class="green"><img src="./imgs/icons/xbox.png" alt=""></button>
+                </div>
+
+                <div class="cBox">
+                    <label for="remember" class="labelCBox"> Manter Conectado
+                        <input type="checkbox" name="remember" id="remember" />
+                    </label>
+                </div>
+
+                <input type="submit" id="send" class="send" value=" " name="login" />
+            </form>
+
+            <div class="footer">
+                <a href="https://github.com/CodedBytes"><i class="fa-brands fa-square-github"></i> CodedBytes</a>
+                <p>V68.0.10</p>
+            </div>
+        </div>
+
+        <div class="banner">
+            <button type="button" onclick="menu();" id="wBtn"><img src="./imgs/icons/user.png" alt="" id="wBtn"></button>
+            <div id="window" class="windowInfo">
+                <a href="#"><i class="fa-brands fa-square-github"></i> GITHUB</a>
+                <a href="javascript:void(0);" class="blocked">DESLOGAR</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PopUp Windows -->
+    <script src="./js/windows.js"></script>
+
+    <!-- Jquery input validation -->
+    <script>
+        $(".login").on("input", function(){
+            if($(this).val().length > 4) 
+            {
+                $(".pass").on("input", function()
+                {
+                    if($(this).val().length <= 4)
+                    {
+                        $("#send").removeClass('enviar');
+                    } 
+                    else $("#send").addClass('enviar');
+                });
+            } else $("#send").removeClass('enviar');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riot Client Main</title>
+    <link rel="shortcut icon" href="./imgs/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/Windows.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="./js/login.js"></script>
+</head>
+<body>
+    <!-- Avalida se tem algum cookie desse site -->
+    <script type="text/javascript">
+        if(!getCookie("usuario") && !getCookie("senha")){
+            location.href = "./login.html";
+        }
+    </script>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="./imgs/index_logo.png" alt="" />
+    </div>
+
+    <!-- Side Button -->
+    <div class="rightButton">
+        <button type="button" onclick="menu();" id="wBtnn"><img src="./imgs/icons/user.png" alt="" id="wBtnn">
+        <div id="window" class="indexWindowInfo">
+            <span class="nickname"><span id="name"></span>#BR1</span>
+            <hr><br>
+            <a href="#"><i class="fa-brands fa-square-github"></i> GITHUB</a>
+            <a href="javascript:logout();">ENCERRAR SESSÃO</a>
+        </div></button>
+    </div>
+
+    <!-- Pagina -->
+    <section class="main">
+        <div class="myGames-section">
+            <h1>Meus jogos</h1>
+
+            <!-- Conteudos -->
+            <div class="Games">
+                <div class="content">
+                    <div class="splashArt1"></div>
+
+                    <div class="desc">
+                        <img src="./imgs/icons/lol-Icon.png" alt="" height="39px" width="35px">
+                        <span>League Of Legends</span>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="splashArt2"></div>
+
+                    <div class="desc">
+                        <img src="./imgs/icons/tft-Icon.png" alt="" height="39px" width="35px">
+                        <span>Teamfight Tactics</span>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="splashArt3"></div>
+
+                    <div class="desc">
+                        <img src="./imgs/icons/valorant-Icon.png" alt="" height="39px" width="35px">
+                        <span>Teamfight Tactics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="submain">
+        <div class="allGames-section">
+            <h1>Todos os jogos</h1>
+
+            <!-- Conteudos -->
+            <div class="Games">
+                <div class="content">
+                    <div class="splashArt1"></div>
+
+                    <div class="desc">
+                        <img src="./imgs/icons/lol-Icon.png" alt="" height="39px" width="35px">
+                        <span>League Of Legends</span>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="splashArtWR"></div>
+
+                    <div class="desc">
+                        <img src="./imgs/icons/lol-wr-Icon.png" alt="" height="39px" width="35px">
+                        <span>League of legends: Wild Rift</span>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="splashArtLOR"></div>
+
+                    <div class="desc">
+                        <img src="./imgs/icons/lor-Icon.png" alt="" height="39px" width="35px">
+                        <span>Legends Of Runeterra</span>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="splashArt2"></div>
+
+                    <div class="desc">
+                        <img src="./imgs/icons/tft-Icon.png" alt="" height="39px" width="35px">
+                        <span>Teamfight Tactics</span>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="splashArt3"></div>
+
+                    <div class="desc">
+                        <img src="./imgs/icons/valorant-Icon.png" alt="" height="39px" width="35px">
+                        <span>Teamfight Tactics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evento -->
+        <div class="events">
+            <h1>Eventos Especiais</h1>
+
+            <div class="ev-banner"></div>
+
+            <div class="ev-info">
+                <div class="description">
+                    <h1>CONV/RGENCE: A League Of Legends Story™</h1>
+
+                    <p>CONV/RGENCE: A League Of Legends Story é um jogo de ação em plataforma 2D
+                        que apresenta um combate dinamico e mecânicas de explosão originais graças
+                        as habilidades de viagem tempoespacial de Ekko.
+                    </p>
+                    <p>Rebobine suas ações para aprender
+                        com os erros e superar cada novo inimigo. Será possível salvar o futuro de Zaun?</p>
+                </div>
+
+                <div class="ev-buttons">
+                    <button class="Comprar"><span>Comprar Agora</span></button>
+                    <button><span>Saiba Mais</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+   <!-- PopUp Windows -->
+   <script src="./js/windows.js"></script>
+
+   <!-- Pegando nome do usuario pelo cookie -->
+   <script>
+        var arr = document.cookie.split(';'),
+        cookies = {};
+        for(var i=0; i < arr.length; i++){
+        var parts = arr[i].split('=');
+        if(parts.length !== 2) continue;
+        cookies[parts[0].trim()] = parts[1];
+        }
+        console.dir(cookies)
+
+        document.getElementById('name').textContent = cookies['usuario'];
+   </script>
+</body>
+</html>
