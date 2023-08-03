@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=800&size=24&pause=1000&width=650&lines=Front-End+do+cliente+da+RiotGames+em+Web+!" alt="Typing SVG" /></a><br>
-  <img src="/starbucks.png">
+  <img src="/logo.png">
 </div>
 
 ##
@@ -8,6 +8,8 @@
 Projeto front-end, recriando o client da riot em uma pagina web usando css3 html5 e javascript.<br>
 O projeto esta totalmente responsivo para as principais marcas de celulares do mercado e monitores.<br>
 Contem também um sistema de login fake, usando cookies para ter uma experiencia bem proxima ao que é o launcher de verdade<br>
+
+OBS : Não tenho nenhum envolvimento com a RiotGames, e este projeto é destinado para demonstração de performace com front-end em webapps.
 
 ##
  
